@@ -11,13 +11,13 @@ ctx.fillStyle = "purple";
 ctx.fillRect(20, 300, 20, 150);
 }
 
-function drawCircle() {
+function animate() {
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 GameObject();
 }
 
-drawCircle();
+animate();
 
 var player1 = new GameObject();
 
