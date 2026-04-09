@@ -10,32 +10,28 @@ var player = new Paddle();
 
 function GameObject() {
 
-x += dx;
-y += dy;
+    x += dx;
+    y += dy;
 
-if(s) {
-player.y += 5;
-}
-if(w) {
-player.y -= 5;
+    
+    
+    if (s && player.y + player.height/2 < canvas.height) {
+        player.y += 5;
+    }
+    if (w && player.y - player.height/2 > 0) {
+        player.y -= 5;
+    }
+
+    player.move();
+    player.drawRect();
 }
 
-player.move();
-player.drawRect();
-}
-
-var timer = setInterval(animate, 1000/60);
+var timer = setInterval(animate, 1000 / 60);
 
 function animate() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-GameObject();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    GameObject();
 
 
-if (x + player > canvas.width || x - player < 0 ) {
-    dx = -dx;
-}
-if (y + player > canvas.height || y - player < 0 ) {
-    dy = -dy;
-}
-}
 
+}
