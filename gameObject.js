@@ -1,5 +1,5 @@
 // JavaScript Document
-function Paddle(x,y,w,h,color)
+function GameObject(x,y,w,h,color)
 {
 	
 	//Default Values
