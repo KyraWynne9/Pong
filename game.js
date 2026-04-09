@@ -10,6 +10,9 @@ var player = new Paddle();
 
 function GameObject() {
 
+x += dx;
+y += dy;
+
 if(s) {
 player.y += 5;
 }
@@ -27,8 +30,6 @@ function animate() {
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 GameObject();
 
-x += dx;
-y += dy;
 
 if (x + player > canvas.width || x - player < 0 ) {
     dx = -dx;
