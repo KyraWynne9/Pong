@@ -63,9 +63,18 @@ function animate() {
         ball.x = canvas.width/2
         ball.y = canvas.height/2
     }
+    //if(player.hitTestObject(ball)){
+    //    ball.vx = ball.vx * -1;
+    //    console.log("hit")
+    //}
+
     if(player.hitTestObject(ball)){
-        ball.vx = ball.vx * -1;
-        console.log("hit")
+        
+    if(ball.y < player.y - player.height/6)
+     {
+       ball.vx = 6;
+       ball.vy = -6;
+     }
     }
 
     ball.x += ball.vx;
