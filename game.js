@@ -62,6 +62,8 @@ function animate() {
     if(ball.x - ball.width/2 < 0){
         ball.x = canvas.width/2
         ball.y = canvas.height/2
+        ball.vx = -6;
+        ball.vy = 0;
     }
     //if(player.hitTestObject(ball)){
     //    ball.vx = ball.vx * -1;
@@ -70,32 +72,25 @@ function animate() {
 
 
     if(player.hitTestObject(ball)){
-        
-        if(ball.y < player.y - player.height)
+
+    if(ball.y < player.y - player.height/6)
      {
-       ball.vx = 6;
+        ball.vx = 6;
        ball.vy = -6;
-     }
-    }
+     } 
 
-    if(player.hitTestObject(ball)){
-        
-        if(ball.y < player.y - player.height/3)
-     {
-       ball.vx = - ball.vx;
-       ball.vy = - ball.vy;
-     }
-    }
-
-     if(player.hitTestObject(ball)){
-        
-        if(ball.y < player.y - player.height/6)
+    else if(ball.y > player.y + player.height/6)
      {
        ball.vx = 6;
        ball.vy = 6;
      }
-    }
 
+    else 
+     {
+       ball.vx = - ball.vx;
+       // ball.vy = - ball.vy;
+     }
+    }
 
     ball.x += ball.vx;
     ball.y += ball.vy;
