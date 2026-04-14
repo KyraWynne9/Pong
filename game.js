@@ -68,14 +68,34 @@ function animate() {
     //    console.log("hit")
     //}
 
+
     if(player.hitTestObject(ball)){
         
-    if(ball.y < player.y - player.height/6)
+        if(ball.y < player.y - player.height)
      {
        ball.vx = 6;
        ball.vy = -6;
      }
     }
+
+    if(player.hitTestObject(ball)){
+        
+        if(ball.y < player.y - player.height/3)
+     {
+       ball.vx = - ball.vx;
+       ball.vy = - ball.vy;
+     }
+    }
+
+     if(player.hitTestObject(ball)){
+        
+        if(ball.y < player.y - player.height/6)
+     {
+       ball.vx = 6;
+       ball.vy = 6;
+     }
+    }
+
 
     ball.x += ball.vx;
     ball.y += ball.vy;
