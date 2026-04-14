@@ -50,7 +50,7 @@ function animate() {
 
     // ball code
 
-    if(ball.x + ball.width/2 < canvas.width){
+    if(ball.x + ball.width/2 > canvas.width){
         ball.vx = -ball.vx;
     }
     if(ball.y + ball.width/2 > canvas.height){
@@ -59,8 +59,9 @@ function animate() {
     if(ball.y - ball.width < -1.5){
         ball.vy = -ball.vy;
     }
-    if(ball.x - ball.width > player.width){
-        ball.vx = -ball.vx;
+    if(player.hitTestObject(ball)){
+        ball.vx = ball.vx * -1;
+        console.log("hit")
     }
 
     ball.x += ball.vx;
