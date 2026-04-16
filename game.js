@@ -9,30 +9,26 @@ dy = 6;
 var player = new GameObject();
 var player2 = new GameObject(1020);
 var ball = new GameObject(canvas.width/2,canvas.height/2);
+var p1Wins = 0;
+var p2Wins = 0;
 ball.vx = -6;
 ball.vy = 0;
 
-let winner
 
-let score1 = 0
 
-function raiseScore() {
-    score1 += 1;
-    let scoreElement = document.getElementById("scoreDisplay1");
-    scoreElement.innerHTML = "Player 1: " + score1;
-    if (score1 == 10) {
+
+
+function raiseScore1() {
+    p1Wins += 1;
+    if (p1Wins == 10) {
         state = "win"
-        winner = player1
+        winner = player
     }
 }
 
-let score2 = 0
-
 function raiseScore2() {
-    score2 += 1;
-    let scoreElement = document.getElementById("scoreDisplay2");
-    scoreElement.innerHTML = "Player 2: " + score2;
-        if (score2 == 10) {
+    p2Wins += 1;
+        if (p2Wins == 10) {
         state = "win"
         winner = player2
     }
@@ -91,7 +87,7 @@ function animate() {
         ball.y = canvas.height/2
         ball.vx = 6;
         ball.vy = 0;
-        raiseScore();
+        raiseScore1();
     }
     if(ball.y + ball.width/2 > canvas.height){
         ball.vy = -ball.vy;
@@ -157,7 +153,14 @@ function animate() {
     ball.x += ball.vx;
     ball.y += ball.vy;
     ball.drawCircle();
+    
+   ctx.font = "20px Oblique";
+   let scoreText = `Player 1 ${p1Wins} |  Player 2 ${p2Wins}`;
+   let textWidth = ctx.measureText(scoreText);
+   //console.log(textWidth);
+   ctx.fillText(scoreText, canvas.width/2 - textWidth.width/2, 50);
 
-
+    // ctx.fillText(p1Wins, canvas.width/2, 70);
+    // ctx.fillText(p2Wins, 560, 70);
 
 }
