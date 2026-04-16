@@ -155,7 +155,7 @@ function animate() {
     ball.drawCircle();
     
    ctx.font = "20px Oblique";
-   let scoreText = `Player 1 ${p1Wins} |  Player 2 ${p2Wins}`;
+   let scoreText = `Player 1: ${p1Wins} |  Player 2: ${p2Wins}`;
    let textWidth = ctx.measureText(scoreText);
    //console.log(textWidth);
    ctx.fillText(scoreText, canvas.width/2 - textWidth.width/2, 50);
