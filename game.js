@@ -20,7 +20,7 @@ function raiseScore() {
     score1 += 1;
     let scoreElement = document.getElementById("scoreDisplay1");
     scoreElement.innerHTML = "Player 1: " + score1;
-    if (score1 == 7) {
+    if (score1 == 10) {
         state = "win"
         winner = player1
     }
@@ -32,7 +32,7 @@ function raiseScore2() {
     score2 += 1;
     let scoreElement = document.getElementById("scoreDisplay2");
     scoreElement.innerHTML = "Player 2: " + score2;
-        if (score2 == 7) {
+        if (score2 == 10) {
         state = "win"
         winner = player2
     }
