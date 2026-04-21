@@ -163,16 +163,16 @@ function animate() {
     // ctx.fillText(p1Wins, canvas.width/2, 70);
     // ctx.fillText(p2Wins, 560, 70);
 
-    cxt.save();
-    cxt.strokeStyle = "blue";
-    cxt.lineWidth = 3; 
+    ctx.save();
+    ctx.strokeStyle = "rgb(144, 226, 208)";
+    ctx.lineWidth = 3; 
     
-    cxt.beginPath();
-    cxt.moveTo(canvas.width/2, 20);
-    cxt.lineTo(canvas.width/2, 730);
-    cxt.closePath();
+    ctx.beginPath();
+    ctx.moveTo(canvas.width/2, 0);
+    ctx.lineTo(canvas.width/2, 750);
+    ctx.closePath();
     
-    cxt.stroke();
-    cxt.restore();
+    ctx.stroke();
+    ctx.restore();
 
 }
