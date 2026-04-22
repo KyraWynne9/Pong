@@ -83,6 +83,8 @@ function animate() {
      player2.drawRect();
     // ball code
 
+    ctx.drawImage(img, canvas.width/2, canvas.height/2, ball.width, ball.height);
+    
     if(ball.x + ball.width/2 > canvas.width){
         ball.x = canvas.width/2
         ball.y = canvas.height/2
@@ -153,7 +155,8 @@ function animate() {
 
     ball.x += ball.vx;
     ball.y += ball.vy;
-    ball.drawCircle();
+    //ball.drawCircle();
+    ball.drawImage();
     
    ctx.font = "20px Oblique";
    let scoreText = `Player 1: ${p1Wins} |  Player 2: ${p2Wins}`;
