@@ -48,7 +48,7 @@ function raiseScore2() {
 // }
 
 
-
+console.log(img);
 
 var timer = setInterval(animate, 1000 / 60);
 
@@ -83,7 +83,7 @@ function animate() {
      player2.drawRect();
     // ball code
 
-    ctx.drawImage(img, canvas.width/2, canvas.height/2, ball.width, ball.height);
+    
     
     if(ball.x + ball.width/2 > canvas.width){
         ball.x = canvas.width/2
@@ -155,8 +155,9 @@ function animate() {
 
     ball.x += ball.vx;
     ball.y += ball.vy;
-    //ball.drawCircle();
-    ball.drawImage();
+    ball.drawCircle();
+    ctx.drawImage(img, ball.x - ball.width/2, ball.y- ball.width/2, ball.width + 10, ball.width + 10);
+    //ball.drawImage();
     
    ctx.font = "20px Oblique";
    let scoreText = `Player 1: ${p1Wins} |  Player 2: ${p2Wins}`;

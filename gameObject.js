@@ -31,11 +31,6 @@ function GameObject(x,y,w,h,color)
 	this.vx = 0;
 	this.vy = 0;
 	
-
-	this.drawImage() = function()
-	{
-		ctx.drawImage(img, canvas.width/2, canvas.height/2, ball.width, ball.height);
-	}
 	//This draws the player to the screen
 	this.drawRect = function()
 	{
