@@ -1,12 +1,12 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+var img = document.getElementById("ric");
 
 x = canvas.width / 2;
 y = canvas.height / 2;
 dx = 6;
 dy = 6;
 
-var img = document.getElementById("ric");
 var player = new GameObject();
 var player2 = new GameObject(1020);
 var ball = new GameObject(canvas.width/2,canvas.height/2);
